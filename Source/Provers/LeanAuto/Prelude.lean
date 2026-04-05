@@ -85,4 +85,5 @@ def distinct {a : Type} [BEq a] (xs: List a) : Prop :=
 
 axiom realToInt : Real → Int
 axiom intToReal : Int → Real
-instance BEqReal: BEq Real := by sorry
+instance BEqReal: BEq Real :=
+  ⟨fun a b => Classical.decEq Real a b⟩
